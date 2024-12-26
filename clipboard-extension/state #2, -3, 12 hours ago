@@ -1,0 +1,43 @@
+
+export {}; // Avoid polluting the global namespace
+//
+// async function fetchTranslate(message: string): Promise<string | undefined> {
+// 	const res = await fetch(
+// 		`https://wispy-art-eb35.aieasyuse.workers.dev/translateDocument`,
+// 		{
+// 			method: "POST",
+// 			headers: {
+// 				"Content-Type": "application/json",
+// 			},
+// 			body: JSON.stringify({
+// 				documentData: message,
+// 				targetLanguage: "English",
+// 			}),
+// 		},
+// 	);
+//
+// 	if (res.ok) {
+// 		const { translated_text } = await res.json();
+// 		return translated_text;
+// 	}
+//
+// 	return undefined; // Return undefined if the request fails
+// }
+//
+// chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
+// 	if (message.type === "SELECTED_TEXT") {
+// 		fetchTranslate(message.text)
+// 			.then((modifiedText) => {
+// 				console.log("Modified text:", modifiedText);
+// 				// Respond with the modified text
+// 				sendResponse({ modifiedText });
+// 			})
+// 			.catch((error) => {
+// 				console.error("Translation failed:", error);
+// 				sendResponse({ modifiedText: null });
+// 			});
+//
+// 		// Keep the sendResponse channel open for async response
+// 		return true;
+// 	}
+// });
