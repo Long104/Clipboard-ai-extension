@@ -1,7 +1,6 @@
-// import "@/style.css";
-// import "@/button.css";
+import "@/style.css";
 import { useEffect, useState } from "react";
-import { Button, Checkbox, MantineProvider } from "@mantine/core";
+import { Button, MantineProvider } from "@mantine/core";
 import But from "@/components/button";
 import "@mantine/core/styles.css";
 
@@ -31,6 +30,7 @@ function IndexPopup() {
 		window.close();
 	};
 
+
 	useEffect(() => {
 		// Retrieve initial value from storage on mount
 		(async () => {
@@ -43,32 +43,12 @@ function IndexPopup() {
 		})();
 	}, []);
 
+
+
 	return (
 		<MantineProvider>
 			<>
 				<div className="min-w-64 min-h-64 flex flex-col items-center">
-					{/* <a */}
-					{/* 	href="https://notion-clone-rose-five.vercel.app" */}
-					{/* 	target="_blank" */}
-					{/* 	className="z-10 absolute top-4 text-lg text-white font-bold */}
-					{/*       " */}
-					{/* > */}
-					{/* 	Go to Notion Clone */}
-					{/* </a> */}
-					{/* <div className=" flex flex-grow items-center justify-center"> */}
-					{/* 	<button className="toggle"> */}
-					{/* 		<input */}
-					{/* 			type="checkbox" */}
-					{/* 			id="btn" */}
-					{/* 			checked={isOn} */}
-					{/* 			onChange={toggleSwitch} */}
-					{/* 		/> */}
-					{/* 		<label htmlFor="btn"> */}
-					{/* 			<span className="thumb"></span> */}
-					{/* 		</label> */}
-					{/* 		<div className="light"></div> */}
-					{/* 	</button> */}
-					{/* </div> */}
 					<But isOn={isOn} toggleSwitch={toggleSwitch} />
 					<Button
 						// className="z-50 absolute bottom-4 text-lg text-white font-bold"

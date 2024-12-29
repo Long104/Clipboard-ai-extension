@@ -1,8 +1,23 @@
 export {}; // Avoid polluting the global namespace
 
-document.addEventListener("mouseup", async () => {
-	const selectedText = window.getSelection()?.toString().trim();
+// document.addEventListener("keydown", (event) => {
+//    let  keyBuffer += event.key.toLowerCase(); // Capture the pressed key in lowercase
+//
+//      if (keyBuffer.endsWith("ai")) {
+//      }
+// keyBuffer = "";
+// if (keyBuffer.length > 10) {
+//        keyBuffer = keyBuffer.slice(-2);
+//      }
+// }
+
+// document.addEventListener("mouseup", async () => {
+document.addEventListener("copy", async (event) => {
+	// const selectedText = window.getSelection()?.toString().trim();
+	const selectedText = document.getSelection().toString();
 	const limitData = await new Promise<{ limit?: number }>((resolve) => {
+		//event.clipboardData.setData("text/plain", modifiedText);
+		//event.preventDefault(); // Prevent the default copy action
 		chrome.storage.local.get(["limit"], resolve);
 	});
 	if (limitData.limit === undefined) {

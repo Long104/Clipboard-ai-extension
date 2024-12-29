@@ -7,7 +7,7 @@
     ".plasmo/index.d.ts",
     "./**/*.ts",
     "./**/*.tsx"
-  ],
+, "src/contents/plasmo-overlay-anchor.old", "src/contents/plasmo-inline.old", "src/contents/plasmo-overlay-watch.old", "src/contents/plasmo-overlay.old", "src/contents/plasmo-root-container.old", "src/contents/plasmo-root-container.jsx", "src/contents/plasmo-overlay-watch..old"  ],
   "compilerOptions": {
     "paths": {
       "~*": [

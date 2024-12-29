@@ -75,6 +75,13 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
 				sendResponse({
 					modifiedText: translatedText,
 				});
+
+				chrome.tabs.query({ active: true, currentWindow: true }, (tabs) => {
+					if (tabs[0]?.id) {
+						chrome.tabs.sendMessage(tabs[0].id, { type: "CHANGE_COLOR" });
+					}
+				});
+
 				chrome.storage.local.get("chatRoom", (data) => {
 					const chatHistory = [
 						...(data.chatRoom || []),
